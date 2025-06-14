@@ -13,10 +13,30 @@
     <script src="script/aos.js"></script>
     <script>
         AOS.init({ once: true });
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = ['images/c1.png', 'images/c2.png'];
+            let current = 0;
+
+            const imageEl = document.getElementById('cert-image');
+
+            function showSlide(index) {
+                current = (index + images.length) % images.length;
+                imageEl.src = images[current];
+            }
+
+            window.prevSlide = function () {
+                showSlide(current - 1);
+            };
+
+            window.nextSlide = function () {
+                showSlide(current + 1);
+            };
+        });
+
     </script>
 
     <header
-        class="hidden md:flex w-full px-3 py-4 md:px-10 md:py-4 justify-between items-center backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        class="hidden md:flex w-full px-3 py-4 md:px-10 md:py-4 justify-between items-center bg-blue-500/30 backdrop-blur-md sticky top-0 z-50 shadow-lg">
         <nav class="w-full flex justify-between items-center max-w-screen-2xl mx-auto">
             <div class="flex space-x-4 ">
                 <a class="px-2 py-1 text-xs md:px-5 md:py-2 md:text-base hover:bg-blue-s00 hover:text-white rounded-lg transition duration-300"
@@ -71,87 +91,42 @@
             </div>
         </section>
 
-        <section
+        <section id="What"
             class="relative flex flex-col items-center justify-center px-6 py-12 bg-white min-h-[500px] md:min-h-[600px] text-white"
             data-aos="fade-up">
 
-            <div class="relative max-w-4xl text-center space-y-8 p-4 sm:p-6 md:p-8 rounded-lg bg-blue-700 shadow-xl">
-                <h2 class="text-white font-semibold text-3xl md:text-5xl mb-6" style="font-family: 'Times New Roman'">
+            <div
+                class="relative max-w-5xl text-center space-y-1 md:space-y-8 p-4 bg-blue-700 rounded-lg shadow-md sm:p-3 md:p-8">
+                <h2 class="text-white text-xl md:text-4xl font-bold mb-6">
                     What is Laughter Yoga?</h2>
 
-                <div class="space-y-6 text-lg md:text-xl text-left">
-                    <p class="leading-relaxed">Laughter Yoga is an innovative practice that combines laughter exercises
-                        with Yogic breathing techniques (Pranayama). It's a unique approach to well-being that promotes
-                        health and happiness without relying on traditional humor, jokes, or comedy.</p>
-
-                    <h3 class="text-white font-semibold text-2xl md:text-3xl mt-8 mb-4">Core Principles</h3>
-                    <ul class="list-disc list-inside space-y-3 pl-4">
-                        <li>
-                            <strong class="font-medium text-white">Unconditional Laughter:</strong> Participants engage
-                            in laughter as a physical exercise, initiated voluntarily in a group setting. This laughter
-                            is not contingent on humor, jokes, or external stimuli.
-                        </li>
-                        <li>
-                            <strong class="font-medium text-white">Transformation to Real Laughter:</strong> Through eye
-                            contact and childlike playfulness within the group, simulated laughter quickly becomes
-                            genuine and highly contagious. This transition highlights the social and inherent nature of
-                            laughter.
-                        </li>
-                    </ul>
-
-                    <h3 class="text-white font-semibold text-2xl md:text-3xl mt-8 mb-4">Methodology</h3>
-                    <ul class="list-disc list-inside space-y-3 pl-4">
-                        <li>
-                            <strong class="font-medium text-white">Laughter Exercises:</strong> These are structured
-                            activities designed to stimulate laughter. They often involve playful movements,
-                            vocalizations, and group interactions.
-                        </li>
-                        <li>
-                            <strong class="font-medium text-white">Deep Breathing (Pranayama):</strong> Laughter Yoga
-                            incorporates deep diaphragmatic breathing exercises, a core component of traditional Yoga.
-                            This combination is crucial for maximizing the physiological benefits.
-                        </li>
-                    </ul>
-
-                    <h3 class="text-white font-semibold text-2xl md:text-3xl mt-8 mb-4">Health and Well-being Benefits
-                    </h3>
-                    <ul class="list-disc list-inside space-y-3 pl-4">
-                        <li>
-                            <strong class="font-medium text-white">Increased Oxygenation:</strong> The deep breathing
-                            exercises, combined with the physical act of laughing, significantly increase oxygen intake
-                            to the body and brain. This enhanced oxygenation contributes to improved energy levels and
-                            overall vitality.
-                        </li>
-                        <li>
-                            <strong class="font-medium text-white">Enhanced Energy and Health:</strong> Regular practice
-                            leads to a heightened sense of well-being, increased energy, and improved physical and
-                            mental health.
-                        </li>
-                    </ul>
-
-                    <h3 class="text-white font-semibold text-2xl md:text-3xl mt-8 mb-4">Scientific Validation</h3>
-                    <ul class="list-disc list-inside space-y-3 pl-4">
-                        <li>
-                            <strong class="font-medium text-white">Mind-Body Connection:</strong> Studies indicate that
-                            the human body does not differentiate between real and simulated laughter when the latter is
-                            performed with willingness and intention.
-                        </li>
-                        <li>
-                            <strong class="font-medium text-white">Equivalent Health Benefits:</strong> Whether laughter
-                            is spontaneous or initiated as an exercise, the physiological and psychological health
-                            benefits remain the same. This means participants can achieve the positive effects of
-                            laughter even if they don't initially feel like laughing.
-                        </li>
-                    </ul>
+                <div class="space-y-3 md:space-y-6 text-xs md:text-xl text-left">
+                    <p class="leading-relaxed">1. Laughter Yoga is a unique concept where anyone can laugh for no reason
+                        without relying on humor, jokes or comedy.</p>
+                    <p class="leading-relaxed">2. We initiate laughter as an exercise in a group but with eye contact
+                        and
+                        childlike playfulness, it soon turns into real and contagious laughter.</p>
+                    <p class="leading-relaxed">3.The reason we call it Laughter Yoga is because it combines laughter
+                        exercises with yoga breathing. This brings more oxygen to the body and the brain which makes one
+                        feel more energetic and healthy.</p>
+                    <p class="leading-relaxed">4. Scientific studies show that the body cannot differentiate between
+                        real
+                        laughter and voluntary laughter if done with willingness. One gets the same health benefits,
+                        whether laughter is real or simulated.</p>
+                    <p class="leading-relaxed">5. It was started by a medical doctor Dr. Madan Kataria from India with
+                        just
+                        five people in a Mumbai Park in 1995. There are thousands of Laughter Clubs in more than 100
+                        countries.</p>
                 </div>
             </div>
         </section>
 
         <section id="3fold"
-            class="overflow-x-hidden flex items-center justify-center w-full p-5 md:p-8 lg:p-16 bg-blue-700 min-h-[600px]" data-aos="fade-up">
+            class="overflow-x-hidden flex items-center justify-center w-full p-5 md:p-8 lg:p-16 bg-blue-700 min-h-[260px] md:min-h-[500px]"
+            data-aos="fade-up">
             <div class="items-center gap-8">
                 <h1 class="text-white text-base md:text-4xl font-bold mb-10">Three fold in Laughter Yoga</h1>
-                <div>
+                <div class="space-y-3">
                     <h1 class="text-white ml-5 md:ml-10 text-xs md:text-2xl">1. Laughter should be sustained</h1>
                     <h1 class="text-white ml-5 md:ml-10 text-xs md:text-2xl">2. Laughter should be deep</h1>
                     <h1 class="text-white ml-5 md:ml-10 text-xs md:text-2xl">3. Laughter should be unconditiona</h1>
@@ -160,33 +135,100 @@
         </section>
 
 
-        <!-- <section id="outreach"
-            class="w-full bg-gradient-to-r from-blue-600 bg-blue-400 py-8 md:py-12 px-4 md:px-12 flex flex-row items-center justify-between relative overflow-hidden"
+        <section id="outreach"
+            class="w-full bg-gradient-to-r py-8 md:py-12 px-4 md:px-12 items-center justify-between relative overflow-hidden"
             data-aos="fade-up">
+            <h2 class="text-md md:text-4xl font-bold text-center mb-10">Laughter Yoga Outreach</h2>
+            <div class="flex flex-col gap-1 md:gap-20">
+                <div class="flex flex-col-reverse md:flex-row">
+                    <div class="w-full flex flex-col justify-center items-center text-center relative z-10 h-full min-h-[50px] md:min-h-[350px]"
+                        data-aos="fade-right">
+                        <p class="text-xs md:text-3xl mb-1 md:mb-6">
+                            At Visakhi Sky Park
+                        </p>
+                    </div>
 
-            <div class="w-full flex flex-col items-start text-left relative z-10" data-aos="fade-right">
-                <h2 class="text-md md:text-4xl font-bold mb-4">Doctors Are Available</h2>
-                <p class="text-xs md:text-3xl mb-6">
-                    Need to see the doctor? Call us directly and arrange your appointment.
-                </p>
+                    <div class="w-full flex justify-end relative z-10 ">
+                        <img src="images/VSP.jpg" alt="VSP" class="w-auto h-[150px] md:h-[350px] object-contain" />
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full flex justify-end relative z-10 ">
+                        <img src="images/VSP.jpg" alt="VSP" class="w-auto h-[150px] md:h-[350px] object-contain" />
+                    </div>
 
-                <a href="tel:+918543032700" aria-label="Call +91 8543032700 to book an appointment" class="flex items-center gap-2 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800
-          text-white px-6 py-3 rounded-full shadow-md transition-all duration-300 ease-in-out
-          text-xs md:text-xl">
+                    <div class="w-full flex flex-col justify-center items-center text-center relative z-10 h-full min-h-[50px] md:min-h-[350px]"
+                        data-aos="fade-right">
+                        <p class="text-xs md:text-3xl mb-1 md:mb-6">
+                            At Visakhi Sky Park
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col-reverse md:flex-row">
+                    <div class="w-full flex flex-col justify-center items-center text-center relative z-10 h-full min-h-[50px] md:min-h-[350px]"
+                        data-aos="fade-right">
+                        <p class="text-xs md:text-3xl mb-1 md:mb-6">
+                            At Visakhi Sky Park
+                        </p>
+                    </div>
 
-                    <img src="images/phone.png" alt="Phone" class="w-3 h-3 md:w-5 md:h-5 self-center" />
-                    Book Appointment
-                </a>
-
-            </div>
-
-            <div class="w-full flex justify-start relative z-10 ">
-                <img src="images/doctor1.webp" alt="Doctor"
-                    class="w-auto h-[150px] md:h-[500px] object-contain ml-3 md:ml-15" />
+                    <div class="w-full flex justify-end relative z-10 ">
+                        <img src="images/VSP.jpg" alt="VSP" class="w-auto h-[150px] md:h-[350px] object-contain" />
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full flex justify-end relative z-10 ">
+                        <img src="images/VSP.jpg" alt="VSP" class="w-auto h-[150px] md:h-[350px] object-contain" />
+                    </div>
+                    <div class="w-full flex flex-col justify-center items-center text-center relative z-10 h-full min-h-[50px] md:min-h-[350px]"
+                        data-aos="fade-right">
+                        <p class="text-xs md:text-3xl mb-1 md:mb-6">
+                            At Visakhi Sky Park
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col-reverse md:flex-row">
+                    <div class="w-full flex flex-col justify-center items-center text-center relative z-10 h-full min-h-[50px] md:min-h-[350px]"
+                        data-aos="fade-right">
+                        <p class="text-xs md:text-3xl mb-1 md:mb-6">
+                            At Visakhi Sky Park
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-end relative z-10 ">
+                        <img src="images/VSP.jpg" alt="VSP" class="w-auto h-[150px] md:h-[350px] object-contain" />
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="w-full p-5 md:p-10 md:max-h-700 overflow-x-hidden" data-aos="fade-up">
+        <!-- Include Alpine.js in your <head> or before </body> -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <section id="certfications"
+            class="w-full bg-gradient-to-r py-8 md:py-12 px-4 md:px-12 items-center justify-between relative overflow-hidden"
+            data-aos="fade-up">
+
+            <h2 class="text-center text-xl md:text-3xl font-bold mb-6">Certifications</h2>
+
+            <div class="relative w-full max-w-3xl mx-auto">
+                <div id="cert-slides" class="w-full flex justify-center md:justify-end relative">
+                    <img id="cert-image" src="images/c1.png" alt="Certification"
+                        class="w-auto h-[250px] md:h-[550px] object-contain mx-auto transition duration-500 ease-in-out" />
+                    <button onclick="prevSlide()"
+                        class="absolute md:-left-12 left-2 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-800 font-bold py-1 px-3 rounded-full shadow-md text-xl z-10">
+                        ‹
+                    </button>
+                    <button onclick="nextSlide()"
+                        class="absolute md:-right-12 right-2 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-800 font-bold py-1 px-3 rounded-full shadow-md text-xl z-10">
+                        ›
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- <section id="contact" class="w-full p-5 md:p-10 md:max-h-700 overflow-x-hidden" data-aos="fade-up">
             <h1 class="text-xl md:text-4xl font-bold text-center mb-5 mt-5 md:mb-8 md:mt-8">Contact Us
             </h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
@@ -223,12 +265,28 @@
                 </div>
             </div>
         </section>
-    </main>
+        Button For Book a Session
+        <a href="tel:+918543032700" aria-label="Call +91 8543032700 to book an appointment" class="flex items-center gap-2 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800
+          text-white px-6 py-3 rounded-full shadow-md transition-all duration-300 ease-in-out
+          text-xs md:text-xl">
 
-    <footer class="w-full py-5 text-center text-gray-700 text-xs md:text-base bg-gray-100 mt-8">
-        <p>© 2025 Pharma City. All rights reserved.</p>
-        <p class="mt-1.5">Your trusted partner for health and wellness.</p>
-    </footer> -->
+                        <img src="images/phone.png" alt="Phone" class="w-3 h-3 md:w-5 md:h-5 self-center" />
+                        Book a Session
+                    </a>
+    </main> -->
+
+        <footer class="w-full py-5 text-center text-gray-700 text-xs md:text-base bg-gray-100 mt-8">
+            <p>© 2025 CVNR. All rights reserved.</p>
+            <p class="mt-1.5">Contact: <a href="mailto:cvnr74@gmail.com"
+                    class="text-blue-600 hover:underline">cvnr74@gmail.com</a> |
+                <a href="tel:+919848083814" class="text-blue-600 hover:underline">9848083814</a>
+            </p>
+            <div class="mt-2 flex justify-center gap-4">
+                <a href="#" class="text-blue-500 hover:text-blue-700" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" class="text-blue-400 hover:text-blue-600" aria-label="Twitter">Facebook</a>
+                <a href="#" class="text-pink-500 hover:text-blue-700" aria-label="Instagram">Youtube</a>
+            </div>
+        </footer>
 </body>
 
 </html>
